@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lab2._2
+{
+    /* Написати функцію, яка обчислює середнє арифметичне максимального та мінімального
+     елементів одновимірного масиву(вектора) a із n елементів цілого типу.*/
+
+    class Program
+    {
+        static void Main()
+        {
+            Random rnd = new Random();
+            const int n = 24;
+            int[] p = new int[n];
+
+            const int nt = 10;
+            int low = 1;
+            int high = 10;
+
+            for (int i = 0; i < n; i++)
+                p[i] = rnd.Next() % 25;
+            Console.Write("a[] = {");
+
+            for (int i = 0; i < nt; i++)
+            {
+                Console.Write($"{p[i]} , ");
+
+            }
+            Console.WriteLine("}");
+            Console.WriteLine();
+
+            int max = 0;
+            int maxindex = 0;
+            int k;
+            for (int i = 0; i < nt; i++)
+                {
+                 if (p[i] > max)
+                 maxindex = i;
+                }
+
+            int minindex = 0;
+            int min = 0;
+            for (int i = 0; i < nt; i++)
+                {
+                   if (p[i] < min)
+                    minindex = i;
+                }
+            k = maxindex + minindex;
+
+            Console.WriteLine($"Average = {k}");
+            Console.WriteLine();
+        }
+    }
+}
+
